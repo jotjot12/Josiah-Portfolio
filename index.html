@@ -3,236 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Josiah Reyes Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Josiah Reyes | Portfolio</title>
 
 <style>
-* {margin:0; padding:0; box-sizing:border-box;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #020617;
-    color: white;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
 }
 
-/* NAVBAR */
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(2,6,23,0.8);
-    backdrop-filter: blur(10px);
-    padding: 15px;
-    text-align: center;
-    z-index: 1000;
+/* LAYOUT */
+.container {
+  display: flex;
+  min-height: 100vh;
 }
 
-nav a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
+/* SIDEBAR */
+.sidebar {
+  width: 280px;
+  background: rgba(2,6,23,0.9);
+  backdrop-filter: blur(10px);
+  padding: 30px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.05);
 }
 
-nav a:hover { color: #38bdf8; }
-
-/* HERO */
-header {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    background: linear-gradient(135deg,#0f172a,#020617);
+.sidebar img {
+  width: 110px;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
+  margin-bottom: 15px;
 }
 
-h1 {
-    font-size: 50px;
+.sidebar h1 {
+  font-size: 20px;
 }
 
-header p {
-    margin-top: 10px;
-    opacity: 0.7;
+.sidebar p {
+  color: #94a3b8;
+  margin-bottom: 15px;
 }
 
-button {
-    margin-top: 25px;
-    padding: 12px 25px;
-    border-radius: 30px;
-    border: none;
-    background: #38bdf8;
-    cursor: pointer;
-    font-weight: bold;
+.contact {
+  text-align: left;
+  margin-top: 20px;
 }
 
-/* SECTION */
-section {
-    padding: 80px 20px;
-    max-width: 1000px;
-    margin: auto;
+.contact p {
+  font-size: 13px;
+  margin: 8px 0;
 }
 
-h2 {
-    margin-bottom: 20px;
-    border-left: 4px solid #38bdf8;
-    padding-left: 10px;
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 40px;
 }
 
 /* CARD */
 .card {
-    background: rgba(30,41,59,0.5);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 15px;
-    margin: 20px 0;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s;
-}
-
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(56,189,248,0.2);
+  transform: translateY(-5px);
+  border-color: #38bdf8;
 }
 
-ul li { margin: 8px 0; }
+h2 {
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
 
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 8px;
+  background: #1e293b;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.skills span:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+/* PROJECT */
+.project {
+  margin-bottom: 15px;
+}
+
+.project strong {
+  color: #38bdf8;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
+<div class="container">
 
-<!-- HERO -->
-<header>
-    <h1>Josiah Reyes</h1>
-    <p>IT Developer • Automotive Specialist • System Builder</p>
-    <button onclick="scrollToSection()">View My Work</button>
-</header>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <img src="https://via.placeholder.com/110" alt="Josiah Reyes">
+
+  <h1>Josiah Emmanuel G. Reyes</h1>
+  <p>Frontend Developer | IT Student</p>
+
+  <div class="contact">
+    <p>📧 josiahreyes@email.com</p>
+    <p>📱 +63 929 335 2269</p>
+    <p>📍 Taytay, Rizal, Philippines</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
 
 <!-- ABOUT -->
-<section id="about">
-<h2>About Me</h2>
 <div class="card">
-<p>
-I am an IT student passionate about building systems that solve real-world problems.
-With experience in both software development and automotive business operations,
-I combine technical skills with practical business understanding.
-</p>
+  <h2>About Me</h2>
+  <p>
+    I am a Frontend Developer at Autom8e and a 3rd-year IT student specializing in
+    Information Assurance and Security.
+  </p>
+  <br>
+  <p>
+    I build modern, responsive, and user-friendly web applications. I enjoy turning
+    complex ideas into clean and functional UI experiences.
+  </p>
 </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-<h2>Skills</h2>
-<div class="card">
-<ul>
-<li>✔ Web Development</li>
-<li>✔ System Development</li>
-<li>✔ Problem Solving</li>
-<li>✔ Networking & IT Fundamentals</li>
-<li>✔ Social Media Marketing</li>
-<li>✔ Leadership & Teamwork</li>
-</ul>
-</div>
-</section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
-<h2>Experience</h2>
-
 <div class="card">
-<h3>Autom8e (OJT / System Development)</h3>
-<p>
-Worked on real-world system development projects including POS systems and business tools.
-Focused on improving efficiency in sales processing, inventory tracking, and transaction monitoring.
-</p>
+  <h2>Experience</h2>
 
-<ul>
-<li>✔ Assisted in developing RetailMa8e POS System</li>
-<li>✔ Improved workflow automation</li>
-<li>✔ Applied real-world coding and debugging</li>
-<li>✔ Learned business system architecture</li>
-</ul>
+  <div class="project">
+    <strong>Frontend Developer — Autom8e</strong>
+    <p>
+      Developed responsive UI interfaces for automation systems.
+      Worked closely with backend teams to integrate APIs and ensure smooth user experience.
+      Focused on performance, clean design, and usability.
+    </p>
+  </div>
+
+  <br>
+
+  <div class="project">
+    <strong>Social Media Account Executive — AllTraction Performance</strong>
+    <p>
+      Managed content for 4x4 and racing community (PHOX2024).
+      Increased engagement and brand visibility through strategic posting.
+    </p>
+  </div>
+
 </div>
-
-<div class="card">
-<h3>Alltraction Performance</h3>
-<p>Social Media • Marketing • Accounting Executive</p>
-<ul>
-<li>✔ Managed automotive branding & marketing</li>
-<li>✔ Handled business operations & finances</li>
-<li>✔ Worked on 4x4 Land Cruiser projects</li>
-</ul>
-</div>
-
-</section>
 
 <!-- PROJECTS -->
-<section id="projects">
-<h2>Projects</h2>
-
 <div class="card">
-<h3>Cemetery Management System</h3>
-<p>
-Developed a web-based system with integrated mapping using Dijkstra Algorithm
-to improve navigation and cemetery management.
-</p>
+  <h2>Projects</h2>
+
+  <div class="project">
+    <strong>Cemetery Management & Reservation System</strong>
+    <p>
+      A full-stack system with mapping, reservation, and management features for cemetery owners.
+    </p>
+  </div>
+
+  <br>
+
+  <div class="project">
+    <strong>Portfolio Website</strong>
+    <p>
+      Personal portfolio showcasing my development skills and projects.
+    </p>
+  </div>
+
 </div>
 
+<!-- SKILLS -->
 <div class="card">
-<h3>RetailMa8e POS System</h3>
-<p>
-A system designed to manage sales, inventory, and transactions efficiently
-for real-world business use.
-</p>
+  <h2>Skills</h2>
+
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>React</span>
+    <span>UI/UX</span>
+    <span>API Integration</span>
+    <span>Responsive Design</span>
+    <span>Git</span>
+  </div>
+
 </div>
 
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-<p>Email: josiahreyes50@gmail.com</p>
-<p>Phone: 09293352269</p>
-<p>Location: Taytay, Rizal</p>
 </div>
-</section>
-
-<script>
-function scrollToSection() {
-    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
-}
-
-// SCROLL ANIMATION
-const cards = document.querySelectorAll('.card');
-
-window.addEventListener('scroll', () => {
-    cards.forEach(card => {
-        const top = card.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-            card.classList.add('show');
-        }
-    });
-});
-</script>
+</div>
 
 </body>
 </html>
