@@ -5,101 +5,234 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Josiah Reyes Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
+* {margin:0; padding:0; box-sizing:border-box;}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
+    font-family: 'Poppins', sans-serif;
+    background: #020617;
     color: white;
 }
 
-header {
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(2,6,23,0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px;
     text-align: center;
-    padding: 60px 20px;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover { color: #38bdf8; }
+
+/* HERO */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(135deg,#0f172a,#020617);
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 50px;
 }
 
+header p {
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: #38bdf8;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* SECTION */
 section {
-    padding: 40px;
-    max-width: 900px;
+    padding: 80px 20px;
+    max-width: 1000px;
     margin: auto;
 }
 
-.card {
-    background: #1e293b;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
+h2 {
+    margin-bottom: 20px;
+    border-left: 4px solid #38bdf8;
+    padding-left: 10px;
 }
 
-a {
-    color: #38bdf8;
-    text-decoration: none;
+/* CARD */
+.card {
+    background: rgba(30,41,59,0.5);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
 }
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(56,189,248,0.2);
+}
+
+ul li { margin: 8px 0; }
+
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
 <header>
-    <h1>Josiah Emmanuel G. Reyes</h1>
-    <p>IT Student | Developer | Automotive Enthusiast</p>
+    <h1>Josiah Reyes</h1>
+    <p>IT Developer • Automotive Specialist • System Builder</p>
+    <button onclick="scrollToSection()">View My Work</button>
 </header>
 
-<section>
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-        A hardworking and goal-oriented individual with a strong passion for technology and automobiles.
-        Experienced in system development, business management, and problem-solving.
-        </p>
-    </div>
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p>
+I am an IT student passionate about building systems that solve real-world problems.
+With experience in both software development and automotive business operations,
+I combine technical skills with practical business understanding.
+</p>
+</div>
 </section>
 
-<section>
-    <h2>Skills</h2>
-    <div class="card">
-        <ul>
-            <li>IT Fundamentals</li>
-            <li>Problem Solving</li>
-            <li>System Development</li>
-            <li>Social Media Marketing</li>
-            <li>Team Leadership</li>
-        </ul>
-    </div>
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="card">
+<ul>
+<li>✔ Web Development</li>
+<li>✔ System Development</li>
+<li>✔ Problem Solving</li>
+<li>✔ Networking & IT Fundamentals</li>
+<li>✔ Social Media Marketing</li>
+<li>✔ Leadership & Teamwork</li>
+</ul>
+</div>
 </section>
 
-<section>
-    <h2>Experience</h2>
-    <div class="card">
-        <h3>Alltraction Performance</h3>
-        <p>Social Media & Marketing | Accounting Executive</p>
-    </div>
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Experience</h2>
+
+<div class="card">
+<h3>Autom8e (OJT / System Development)</h3>
+<p>
+Worked on real-world system development projects including POS systems and business tools.
+Focused on improving efficiency in sales processing, inventory tracking, and transaction monitoring.
+</p>
+
+<ul>
+<li>✔ Assisted in developing RetailMa8e POS System</li>
+<li>✔ Improved workflow automation</li>
+<li>✔ Applied real-world coding and debugging</li>
+<li>✔ Learned business system architecture</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Alltraction Performance</h3>
+<p>Social Media • Marketing • Accounting Executive</p>
+<ul>
+<li>✔ Managed automotive branding & marketing</li>
+<li>✔ Handled business operations & finances</li>
+<li>✔ Worked on 4x4 Land Cruiser projects</li>
+</ul>
+</div>
+
 </section>
 
-<section>
-    <h2>Projects</h2>
-    <div class="card">
-        <h3>Cemetery Management System</h3>
-        <p>Web-based system with mapping and Dijkstra Algorithm.</p>
-    </div>
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
 
-    <div class="card">
-        <h3>RetailMa8e POS System</h3>
-        <p>Sales, inventory, and transaction management system.</p>
-    </div>
+<div class="card">
+<h3>Cemetery Management System</h3>
+<p>
+Developed a web-based system with integrated mapping using Dijkstra Algorithm
+to improve navigation and cemetery management.
+</p>
+</div>
+
+<div class="card">
+<h3>RetailMa8e POS System</h3>
+<p>
+A system designed to manage sales, inventory, and transactions efficiently
+for real-world business use.
+</p>
+</div>
+
 </section>
 
-<section>
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: josiahreyes50@gmail.com</p>
-        <p>Phone: 09293352269</p>
-    </div>
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<p>Email: josiahreyes50@gmail.com</p>
+<p>Phone: 09293352269</p>
+<p>Location: Taytay, Rizal</p>
+</div>
 </section>
+
+<script>
+function scrollToSection() {
+    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+}
+
+// SCROLL ANIMATION
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            card.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
